@@ -1,16 +1,44 @@
-# agenda_tsi
+```mermaid
+erDiagram
+    DIM_TIEMPO ||--o{ FACT_VENTAS : "id_tiempo"
+    DIM_CLIENTE ||--o{ FACT_VENTAS : "id_cliente"
+    DIM_PRODUCTO ||--o{ FACT_VENTAS : "id_producto"
+    DIM_SUCURSAL ||--o{ FACT_VENTAS : "id_sucursal"
 
-A new Flutter project.
+    FACT_VENTAS {
+        int id_venta PK
+        int id_tiempo FK
+        int id_cliente FK
+        int id_producto FK
+        int id_sucursal FK
+        decimal monto_total
+        int cantidad
+    }
 
-## Getting Started
+    DIM_PRODUCTO {
+        int id_producto PK
+        varchar nombre_producto
+        varchar categoria
+        decimal precio_unitario
+    }
 
-This project is a starting point for a Flutter application.
+    DIM_CLIENTE {
+        int id_cliente PK
+        varchar nombre_cliente
+        varchar segmento
+    }
 
-A few resources to get you started if this is your first Flutter project:
+    DIM_TIEMPO {
+        int id_tiempo PK
+        date fecha
+        int anio
+        int mes
+        int trimestre
+    }
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    DIM_SUCURSAL {
+        int id_sucursal PK
+        varchar nombre_sucursal
+        varchar comuna
+    }
+```
