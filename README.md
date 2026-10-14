@@ -1,3 +1,21 @@
+#HODFSJJKLFJJNSDKLFJSDKLFS
++FSDHJKFSDJL
+FSDGFHJKDHKFLJGDS
+
+
+FSDHJKFHSDLKF###
+
+
+
+||
+|
+
+|
+
+
+F
+
+
 ```mermaid
 erDiagram
     DIM_TIEMPO ||--o{ H_FACT_DETALLE_VENTA : "id_tiempo"
